@@ -1,0 +1,6 @@
+[console_scripts]
+joy_to_text = rov_control.joy_to_text:main
+serial_bridge = rov_control.serial_bridge:main
+text_commander = rov_control.text_commander:main
+thruster_controller = rov_control.thruster_controller:main
+

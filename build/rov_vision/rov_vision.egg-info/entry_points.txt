@@ -1,0 +1,3 @@
+[console_scripts]
+vision_node = rov_vision.vision_node:main
+

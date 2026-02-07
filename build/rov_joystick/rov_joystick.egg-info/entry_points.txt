@@ -1,0 +1,4 @@
+[console_scripts]
+joy_node = rov_joystick.joy_node:main
+keyboard_teleop = rov_joystick.keyboard_teleop:main
+

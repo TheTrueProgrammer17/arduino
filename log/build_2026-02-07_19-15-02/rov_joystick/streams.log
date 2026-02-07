@@ -1,0 +1,38 @@
+[1.304s] Invoking command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_joystick/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_joystick build --build-base /home/shashwat/test_ws/src/build/rov_joystick/build install --record /home/shashwat/test_ws/src/build/rov_joystick/install.log --single-version-externally-managed install_data
+[1.561s] running egg_info
+[1.562s] creating ../../build/rov_joystick/rov_joystick.egg-info
+[1.562s] writing ../../build/rov_joystick/rov_joystick.egg-info/PKG-INFO
+[1.562s] writing dependency_links to ../../build/rov_joystick/rov_joystick.egg-info/dependency_links.txt
+[1.562s] writing entry points to ../../build/rov_joystick/rov_joystick.egg-info/entry_points.txt
+[1.562s] writing requirements to ../../build/rov_joystick/rov_joystick.egg-info/requires.txt
+[1.562s] writing top-level names to ../../build/rov_joystick/rov_joystick.egg-info/top_level.txt
+[1.563s] writing manifest file '../../build/rov_joystick/rov_joystick.egg-info/SOURCES.txt'
+[1.565s] reading manifest file '../../build/rov_joystick/rov_joystick.egg-info/SOURCES.txt'
+[1.566s] writing manifest file '../../build/rov_joystick/rov_joystick.egg-info/SOURCES.txt'
+[1.566s] running build
+[1.566s] running build_py
+[1.566s] creating /home/shashwat/test_ws/src/build/rov_joystick/build
+[1.566s] creating /home/shashwat/test_ws/src/build/rov_joystick/build/lib
+[1.566s] creating /home/shashwat/test_ws/src/build/rov_joystick/build/lib/rov_joystick
+[1.566s] copying rov_joystick/__init__.py -> /home/shashwat/test_ws/src/build/rov_joystick/build/lib/rov_joystick
+[1.567s] copying rov_joystick/joy_node.py -> /home/shashwat/test_ws/src/build/rov_joystick/build/lib/rov_joystick
+[1.567s] running install
+[1.567s] running install_lib
+[1.568s] creating /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick
+[1.568s] copying /home/shashwat/test_ws/src/build/rov_joystick/build/lib/rov_joystick/__init__.py -> /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick
+[1.568s] copying /home/shashwat/test_ws/src/build/rov_joystick/build/lib/rov_joystick/joy_node.py -> /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick
+[1.568s] byte-compiling /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick/__init__.py to __init__.cpython-310.pyc
+[1.569s] byte-compiling /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick/joy_node.py to joy_node.cpython-310.pyc
+[1.570s] running install_data
+[1.570s] creating /home/shashwat/test_ws/src/install/rov_joystick/share/ament_index
+[1.570s] creating /home/shashwat/test_ws/src/install/rov_joystick/share/ament_index/resource_index
+[1.570s] creating /home/shashwat/test_ws/src/install/rov_joystick/share/ament_index/resource_index/packages
+[1.570s] copying resource/rov_joystick -> /home/shashwat/test_ws/src/install/rov_joystick/share/ament_index/resource_index/packages
+[1.570s] copying package.xml -> /home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick
+[1.570s] running install_egg_info
+[1.573s] Copying ../../build/rov_joystick/rov_joystick.egg-info to /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick-0.0.0-py3.10.egg-info
+[1.574s] running install_scripts
+[1.594s] Installing joy_node script to /home/shashwat/test_ws/src/install/rov_joystick/lib/rov_joystick
+[1.595s] Installing keyboard_teleop script to /home/shashwat/test_ws/src/install/rov_joystick/lib/rov_joystick
+[1.595s] writing list of installed files to '/home/shashwat/test_ws/src/build/rov_joystick/install.log'
+[1.623s] Invoked command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick' returned '0': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_joystick/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_joystick build --build-base /home/shashwat/test_ws/src/build/rov_joystick/build install --record /home/shashwat/test_ws/src/build/rov_joystick/install.log --single-version-externally-managed install_data

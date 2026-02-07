@@ -1,0 +1,226 @@
+[0.094s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.094s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x73ede2a51e10>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x73ede2a518d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x73ede2a518d0>>, mixin_verb=('build',))
+[0.237s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.237s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.237s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.237s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.237s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.237s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.237s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/shashwat/test_ws/src'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.238s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extensions ['ignore', 'ignore_ament_install']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'ignore'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'ignore_ament_install'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extensions ['colcon_pkg']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'colcon_pkg'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extensions ['colcon_meta']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'colcon_meta'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extensions ['ros']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'ros'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extensions ['cmake', 'python']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'cmake'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'python'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extensions ['python_setup_py']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-) by extension 'python_setup_py'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extensions ['ignore', 'ignore_ament_install']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extension 'ignore'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extension 'ignore_ament_install'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extensions ['colcon_pkg']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extension 'colcon_pkg'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extensions ['colcon_meta']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extension 'colcon_meta'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extensions ['ros']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_control) by extension 'ros'
+[0.250s] DEBUG:colcon.colcon_core.package_identification:Package 'SubMerge-CV-/rov_control' with type 'ros.ament_python' and name 'rov_control'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extensions ['ignore', 'ignore_ament_install']
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extension 'ignore'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extension 'ignore_ament_install'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extensions ['colcon_pkg']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extension 'colcon_pkg'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extensions ['colcon_meta']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extension 'colcon_meta'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extensions ['ros']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_joystick) by extension 'ros'
+[0.251s] DEBUG:colcon.colcon_core.package_identification:Package 'SubMerge-CV-/rov_joystick' with type 'ros.ament_python' and name 'rov_joystick'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extensions ['ignore', 'ignore_ament_install']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extension 'ignore'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extension 'ignore_ament_install'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extensions ['colcon_pkg']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extension 'colcon_pkg'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extensions ['colcon_meta']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extension 'colcon_meta'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extensions ['ros']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(SubMerge-CV-/rov_vision) by extension 'ros'
+[0.252s] DEBUG:colcon.colcon_core.package_identification:Package 'SubMerge-CV-/rov_vision' with type 'ros.ament_python' and name 'rov_vision'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.253s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.253s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.253s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.253s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.253s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.282s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.282s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.284s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 317 installed packages in /opt/ros/humble
+[0.286s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'cmake_args' from command line to 'None'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'cmake_target' from command line to 'None'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.336s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.337s] DEBUG:colcon.colcon_core.verb:Building package 'rov_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/shashwat/test_ws/src/build/rov_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/shashwat/test_ws/src/install/rov_control', 'merge_install': False, 'path': '/home/shashwat/test_ws/src/SubMerge-CV-/rov_control', 'symlink_install': False, 'test_result_base': None}
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'cmake_args' from command line to 'None'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'cmake_target' from command line to 'None'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'cmake_clean_cache' from command line to 'False'
+[0.337s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'cmake_clean_first' from command line to 'False'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'cmake_force_configure' from command line to 'False'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'ament_cmake_args' from command line to 'None'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'catkin_cmake_args' from command line to 'None'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_joystick' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.338s] DEBUG:colcon.colcon_core.verb:Building package 'rov_joystick' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/shashwat/test_ws/src/build/rov_joystick', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/shashwat/test_ws/src/install/rov_joystick', 'merge_install': False, 'path': '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick', 'symlink_install': False, 'test_result_base': None}
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'cmake_args' from command line to 'None'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'cmake_target' from command line to 'None'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'cmake_clean_cache' from command line to 'False'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'cmake_clean_first' from command line to 'False'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'cmake_force_configure' from command line to 'False'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'ament_cmake_args' from command line to 'None'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'catkin_cmake_args' from command line to 'None'
+[0.338s] Level 5:colcon.colcon_core.verb:set package 'rov_vision' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.339s] DEBUG:colcon.colcon_core.verb:Building package 'rov_vision' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/shashwat/test_ws/src/build/rov_vision', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/shashwat/test_ws/src/install/rov_vision', 'merge_install': False, 'path': '/home/shashwat/test_ws/src/SubMerge-CV-/rov_vision', 'symlink_install': False, 'test_result_base': None}
+[0.339s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.340s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.341s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_control' with build type 'ament_python'
+[0.341s] Level 1:colcon.colcon_core.shell:create_environment_hook('rov_control', 'ament_prefix_path')
+[0.343s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.344s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/hook/ament_prefix_path.ps1'
+[0.345s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/hook/ament_prefix_path.dsv'
+[0.346s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/hook/ament_prefix_path.sh'
+[0.347s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.347s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.351s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick' with build type 'ament_python'
+[0.351s] Level 1:colcon.colcon_core.shell:create_environment_hook('rov_joystick', 'ament_prefix_path')
+[0.351s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/hook/ament_prefix_path.ps1'
+[0.352s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/hook/ament_prefix_path.dsv'
+[0.353s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/hook/ament_prefix_path.sh'
+[0.354s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.354s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.358s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_vision' with build type 'ament_python'
+[0.358s] Level 1:colcon.colcon_core.shell:create_environment_hook('rov_vision', 'ament_prefix_path')
+[0.358s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/hook/ament_prefix_path.ps1'
+[0.359s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/hook/ament_prefix_path.dsv'
+[0.360s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/hook/ament_prefix_path.sh'
+[0.361s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.361s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.624s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_control'
+[0.624s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.624s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.887s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick'
+[0.888s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.888s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.159s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_vision'
+[1.159s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.159s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.656s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_joystick/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_joystick build --build-base /home/shashwat/test_ws/src/build/rov_joystick/build install --record /home/shashwat/test_ws/src/build/rov_joystick/install.log --single-version-externally-managed install_data
+[1.678s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_vision': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_vision build --build-base /home/shashwat/test_ws/src/build/rov_vision/build install --record /home/shashwat/test_ws/src/build/rov_vision/install.log --single-version-externally-managed install_data
+[1.734s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_control': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_control build --build-base /home/shashwat/test_ws/src/build/rov_control/build install --record /home/shashwat/test_ws/src/build/rov_control/install.log --single-version-externally-managed install_data
+[1.975s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_joystick' returned '0': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_joystick/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_joystick build --build-base /home/shashwat/test_ws/src/build/rov_joystick/build install --record /home/shashwat/test_ws/src/build/rov_joystick/install.log --single-version-externally-managed install_data
+[1.977s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick' for CMake module files
+[1.978s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick' for CMake config files
+[1.978s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick/lib'
+[1.978s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick/bin'
+[1.978s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick/lib/pkgconfig/rov_joystick.pc'
+[1.979s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages'
+[1.979s] Level 1:colcon.colcon_core.shell:create_environment_hook('rov_joystick', 'pythonpath')
+[1.979s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/hook/pythonpath.ps1'
+[1.979s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/hook/pythonpath.dsv'
+[1.980s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/hook/pythonpath.sh'
+[1.980s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_joystick/bin'
+[1.981s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rov_joystick)
+[1.981s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/package.ps1'
+[1.982s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/package.dsv'
+[1.982s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/package.sh'
+[1.983s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/package.bash'
+[1.983s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_joystick/share/rov_joystick/package.zsh'
+[1.984s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/shashwat/test_ws/src/install/rov_joystick/share/colcon-core/packages/rov_joystick)
+[2.140s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision' for CMake module files
+[2.140s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_vision' returned '0': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_vision build --build-base /home/shashwat/test_ws/src/build/rov_vision/build install --record /home/shashwat/test_ws/src/build/rov_vision/install.log --single-version-externally-managed install_data
+[2.141s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision' for CMake config files
+[2.141s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision/lib'
+[2.141s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision/bin'
+[2.141s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision/lib/pkgconfig/rov_vision.pc'
+[2.142s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages'
+[2.142s] Level 1:colcon.colcon_core.shell:create_environment_hook('rov_vision', 'pythonpath')
+[2.142s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/hook/pythonpath.ps1'
+[2.142s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/hook/pythonpath.dsv'
+[2.143s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/hook/pythonpath.sh'
+[2.143s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_vision/bin'
+[2.143s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rov_vision)
+[2.144s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/package.ps1'
+[2.144s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/package.dsv'
+[2.144s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/package.sh'
+[2.145s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/package.bash'
+[2.145s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_vision/share/rov_vision/package.zsh'
+[2.145s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/shashwat/test_ws/src/install/rov_vision/share/colcon-core/packages/rov_vision)
+[2.180s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control' for CMake module files
+[2.180s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/shashwat/test_ws/src/SubMerge-CV-/rov_control' returned '0': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/rov_control build --build-base /home/shashwat/test_ws/src/build/rov_control/build install --record /home/shashwat/test_ws/src/build/rov_control/install.log --single-version-externally-managed install_data
+[2.181s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control' for CMake config files
+[2.181s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control/lib'
+[2.181s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control/bin'
+[2.181s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control/lib/pkgconfig/rov_control.pc'
+[2.181s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages'
+[2.181s] Level 1:colcon.colcon_core.shell:create_environment_hook('rov_control', 'pythonpath')
+[2.182s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/hook/pythonpath.ps1'
+[2.182s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/hook/pythonpath.dsv'
+[2.182s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/hook/pythonpath.sh'
+[2.183s] Level 1:colcon.colcon_core.environment:checking '/home/shashwat/test_ws/src/install/rov_control/bin'
+[2.183s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(rov_control)
+[2.183s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/package.ps1'
+[2.184s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/package.dsv'
+[2.184s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/package.sh'
+[2.185s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/package.bash'
+[2.185s] INFO:colcon.colcon_core.shell:Creating package script '/home/shashwat/test_ws/src/install/rov_control/share/rov_control/package.zsh'
+[2.186s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/shashwat/test_ws/src/install/rov_control/share/colcon-core/packages/rov_control)
+[2.186s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.187s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.187s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.187s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.193s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.194s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.194s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.201s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.201s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shashwat/test_ws/src/install/local_setup.ps1'
+[2.202s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/shashwat/test_ws/src/install/_local_setup_util_ps1.py'
+[2.203s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shashwat/test_ws/src/install/setup.ps1'
+[2.204s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shashwat/test_ws/src/install/local_setup.sh'
+[2.205s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/shashwat/test_ws/src/install/_local_setup_util_sh.py'
+[2.205s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shashwat/test_ws/src/install/setup.sh'
+[2.206s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shashwat/test_ws/src/install/local_setup.bash'
+[2.206s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shashwat/test_ws/src/install/setup.bash'
+[2.207s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/shashwat/test_ws/src/install/local_setup.zsh'
+[2.208s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/shashwat/test_ws/src/install/setup.zsh'
