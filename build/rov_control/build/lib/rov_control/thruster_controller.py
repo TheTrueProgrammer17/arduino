@@ -2,23 +2,30 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from std_msgs.msg import Int16MultiArray, Bool
-import time
+import serial
 
 class ROVThrusterController(Node):
     def __init__(self):
         super().__init__("rov_thruster_controller")
 
-        # --- CONFIGURATION (BIDIRECTIONAL) ---
-        self.PWM_NEUTRAL = 1500  # Stopped
-        self.PWM_MIN     = 1100  # Full Reverse
-        self.PWM_MAX     = 1900  # Full Forward
+        # --- ARDUINO SERIAL BRIDGE ---
+        try:
+            # Change '/dev/ttyACM0' to your actual port (e.g. 'COM3')
+            self.arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=0.05)
+            self.get_logger().info("Connected to Arduino Uno")
+        except Exception as e:
+            self.get_logger().error(f"Failed to connect to Arduino: {e}")
+            self.arduino = None
+
+        # --- CONFIGURATION ---
+        self.PWM_NEUTRAL = 1500
+        self.PWM_MIN     = 1100
+        self.PWM_MAX     = 1900
         
         # --- STATE ---
         self.surge = 0.0
         self.yaw = 0.0
         self.heave = 0.0
-        
-        # Safety & Features
         self.is_armed = False         
         self.emergency_stop = False   
         self.depth_lock_active = False
@@ -32,7 +39,7 @@ class ROVThrusterController(Node):
         
         self.pwm_pub = self.create_publisher(Int16MultiArray, "/rov/thruster_pwm", 10)
         self.timer = self.create_timer(0.05, self.update_mixer)
-        self.get_logger().info("ROV Controller: BIDIRECTIONAL MODE (1500 Center)")
+        self.get_logger().info("ROV Controller Active. Waiting for Arm...")
 
     def cmd_callback(self, msg):
         self.surge = msg.linear.x
@@ -42,14 +49,14 @@ class ROVThrusterController(Node):
 
     def arm_callback(self, msg):
         self.is_armed = msg.data
-        if not self.is_armed: self.get_logger().info("Status: DISARMED")
+        status = "ARMED" if self.is_armed else "DISARMED"
+        self.get_logger().info(f"Status changed: {status}")
 
     def lock_callback(self, msg):
         if self.emergency_stop or not self.is_armed: return 
         if msg.data and not self.depth_lock_active:
             self.depth_lock_active = True
             self.locked_heave_val = self.heave
-            self.get_logger().info(f"🔒 DEPTH LOCK: Holding Thrust {self.locked_heave_val:.2f}")
         elif not msg.data:
             self.depth_lock_active = False
 
@@ -61,61 +68,56 @@ class ROVThrusterController(Node):
             self.depth_lock_active = False
 
     def map_pwm(self, val):
-        """ 
-        Maps -1.0 to 1.0 (Joystick) -> PWM_MIN to PWM_MAX (Motors)
-        0.0 becomes 1500 (Neutral)
-        """
-        # Clamp value between -1.0 and 1.0 just in case
         val = max(-1.0, min(1.0, val))
-        
         if val > 0:
             return int(self.PWM_NEUTRAL + (val * (self.PWM_MAX - self.PWM_NEUTRAL)))
         else:
-            # For negative values, map 0 to -1 -> Neutral to Min
             return int(self.PWM_NEUTRAL + (val * (self.PWM_NEUTRAL - self.PWM_MIN)))
 
     def update_mixer(self):
-        # Safety Check
+        # 1. Handle Safety/Disarmed State
         if self.emergency_stop or not self.is_armed:
-            self.publish_stop()
+            stop_pwm = [1500, 1500, 1000, 1000]
+            self.send_to_arduino(stop_pwm)
+            self.publish_pwm_msg(stop_pwm)
             return
 
-        # Mixing
+        # 2. Calculate Control Values
         curr_heave = self.locked_heave_val if self.depth_lock_active else self.heave
         
-        # Horizontal Mixing (Differential)
         h_left  = self.surge + (self.yaw * 0.5)
         h_right = self.surge - (self.yaw * 0.5)
-        
-        # Vertical Mixing (Now supports Up AND Down)
-        # We NO LONGER check "if curr_heave < 0". Both directions are allowed.
-        v_thrust = curr_heave 
+        v_thrust = max(0.0, curr_heave) 
 
-        # Normalize (Keep everything within -1.0 to 1.0)
-        raw = [h_left, h_right, v_thrust, v_thrust]
-        max_abs = max([abs(x) for x in raw]) if raw else 0.0
+        # 3. Convert to PWM
+        final_pwm = [
+            self.map_pwm(h_left), 
+            self.map_pwm(h_right), 
+            int(1000 + v_thrust * 1000), 
+            int(1000 + v_thrust * 1000)
+        ]
         
-        if max_abs > 1.0:
-            raw = [x / max_abs for x in raw]
+        # 4. Send to Arduino & ROS
+        self.send_to_arduino(final_pwm)
+        self.publish_pwm_msg(final_pwm)
 
-        # Convert to PWM
-        final_pwm = [self.map_pwm(x) for x in raw]
+        # 5. LOGGING (This gives you the output you asked for)
+        # Format: SW:Arm/Lock Surge Heave L:PWM R:PWM V1:PWM V2:PWM
+        sw_state = "LCK" if self.depth_lock_active else ("ARM" if self.is_armed else "DIS")
         
-        # Publish
-        msg = Int16MultiArray()
-        msg.data = final_pwm
-        self.pwm_pub.publish(msg)
-        
-        # Logging
-        lock_str = "🔒" if self.depth_lock_active else " "
         self.get_logger().info(
-            f"{lock_str} S:{self.surge:.1f} Y:{self.yaw:.1f} H:{curr_heave:.1f} >>> L:{final_pwm[0]} R:{final_pwm[1]} V:{final_pwm[2]}"
+            f"SW:{sw_state} S:{self.surge:.2f} H:{curr_heave:.2f} | "
+            f"L:{final_pwm[0]} R:{final_pwm[1]} V1:{final_pwm[2]} V2:{final_pwm[3]}"
         )
 
-    def publish_stop(self):
-        # BIDIRECTIONAL STOP IS 1500, NOT 1000!
+    def send_to_arduino(self, values):
+        if self.arduino:
+            data = ",".join(map(str, values)) + "\n"
+            self.arduino.write(data.encode())
+
+    def publish_pwm_msg(self, pwm_values):
         msg = Int16MultiArray()
-        msg.data = [1500, 1500, 1500, 1500] 
+        msg.data = pwm_values
         self.pwm_pub.publish(msg)
 
 def main(args=None):

@@ -1,0 +1,20 @@
+running egg_info
+writing ../build/rov_joystick/rov_joystick.egg-info/PKG-INFO
+writing dependency_links to ../build/rov_joystick/rov_joystick.egg-info/dependency_links.txt
+writing entry points to ../build/rov_joystick/rov_joystick.egg-info/entry_points.txt
+writing requirements to ../build/rov_joystick/rov_joystick.egg-info/requires.txt
+writing top-level names to ../build/rov_joystick/rov_joystick.egg-info/top_level.txt
+reading manifest file '../build/rov_joystick/rov_joystick.egg-info/SOURCES.txt'
+writing manifest file '../build/rov_joystick/rov_joystick.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/rov_joystick/rov_joystick.egg-info to /home/shashwat/test_ws/src/install/rov_joystick/lib/python3.10/site-packages/rov_joystick-0.0.0-py3.10.egg-info
+running install_scripts
+Installing joy_node script to /home/shashwat/test_ws/src/install/rov_joystick/lib/rov_joystick
+Installing keyboard_teleop script to /home/shashwat/test_ws/src/install/rov_joystick/lib/rov_joystick
+writing list of installed files to '/home/shashwat/test_ws/src/build/rov_joystick/install.log'

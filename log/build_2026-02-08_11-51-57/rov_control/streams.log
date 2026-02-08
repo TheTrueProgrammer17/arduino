@@ -1,0 +1,26 @@
+[1.094s] Invoking command in '/home/shashwat/test_ws/src/rov_control': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/rov_control build --build-base /home/shashwat/test_ws/src/build/rov_control/build install --record /home/shashwat/test_ws/src/build/rov_control/install.log --single-version-externally-managed install_data
+[1.451s] running egg_info
+[1.451s] writing ../build/rov_control/rov_control.egg-info/PKG-INFO
+[1.451s] writing dependency_links to ../build/rov_control/rov_control.egg-info/dependency_links.txt
+[1.451s] writing entry points to ../build/rov_control/rov_control.egg-info/entry_points.txt
+[1.451s] writing requirements to ../build/rov_control/rov_control.egg-info/requires.txt
+[1.451s] writing top-level names to ../build/rov_control/rov_control.egg-info/top_level.txt
+[1.453s] reading manifest file '../build/rov_control/rov_control.egg-info/SOURCES.txt'
+[1.455s] writing manifest file '../build/rov_control/rov_control.egg-info/SOURCES.txt'
+[1.456s] running build
+[1.456s] running build_py
+[1.456s] copying rov_control/thruster_controller.py -> /home/shashwat/test_ws/src/build/rov_control/build/lib/rov_control
+[1.457s] running install
+[1.457s] running install_lib
+[1.460s] copying /home/shashwat/test_ws/src/build/rov_control/build/lib/rov_control/thruster_controller.py -> /home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages/rov_control
+[1.462s] byte-compiling /home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages/rov_control/thruster_controller.py to thruster_controller.cpython-310.pyc
+[1.463s] running install_data
+[1.463s] copying package.xml -> /home/shashwat/test_ws/src/install/rov_control/share/rov_control
+[1.463s] running install_egg_info
+[1.465s] removing '/home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages/rov_control-0.0.0-py3.10.egg-info' (and everything under it)
+[1.468s] Copying ../build/rov_control/rov_control.egg-info to /home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages/rov_control-0.0.0-py3.10.egg-info
+[1.472s] running install_scripts
+[1.500s] Installing serial_bridge script to /home/shashwat/test_ws/src/install/rov_control/lib/rov_control
+[1.500s] Installing thruster_controller script to /home/shashwat/test_ws/src/install/rov_control/lib/rov_control
+[1.500s] writing list of installed files to '/home/shashwat/test_ws/src/build/rov_control/install.log'
+[1.532s] Invoked command in '/home/shashwat/test_ws/src/rov_control' returned '0': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/rov_control build --build-base /home/shashwat/test_ws/src/build/rov_control/build install --record /home/shashwat/test_ws/src/build/rov_control/install.log --single-version-externally-managed install_data

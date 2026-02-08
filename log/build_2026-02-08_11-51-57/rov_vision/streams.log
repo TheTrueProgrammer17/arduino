@@ -1,0 +1,21 @@
+[1.185s] Invoking command in '/home/shashwat/test_ws/src/rov_vision': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/rov_vision build --build-base /home/shashwat/test_ws/src/build/rov_vision/build install --record /home/shashwat/test_ws/src/build/rov_vision/install.log --single-version-externally-managed install_data
+[1.410s] running egg_info
+[1.411s] writing ../build/rov_vision/rov_vision.egg-info/PKG-INFO
+[1.412s] writing dependency_links to ../build/rov_vision/rov_vision.egg-info/dependency_links.txt
+[1.412s] writing entry points to ../build/rov_vision/rov_vision.egg-info/entry_points.txt
+[1.413s] writing requirements to ../build/rov_vision/rov_vision.egg-info/requires.txt
+[1.413s] writing top-level names to ../build/rov_vision/rov_vision.egg-info/top_level.txt
+[1.414s] reading manifest file '../build/rov_vision/rov_vision.egg-info/SOURCES.txt'
+[1.416s] writing manifest file '../build/rov_vision/rov_vision.egg-info/SOURCES.txt'
+[1.417s] running build
+[1.418s] running build_py
+[1.418s] running install
+[1.418s] running install_lib
+[1.419s] running install_data
+[1.419s] running install_egg_info
+[1.424s] removing '/home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages/rov_vision-0.0.0-py3.10.egg-info' (and everything under it)
+[1.424s] Copying ../build/rov_vision/rov_vision.egg-info to /home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages/rov_vision-0.0.0-py3.10.egg-info
+[1.426s] running install_scripts
+[1.452s] Installing vision_node script to /home/shashwat/test_ws/src/install/rov_vision/lib/rov_vision
+[1.452s] writing list of installed files to '/home/shashwat/test_ws/src/build/rov_vision/install.log'
+[1.487s] Invoked command in '/home/shashwat/test_ws/src/rov_vision' returned '0': PYTHONPATH=/home/shashwat/test_ws/src/build/rov_vision/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/shashwat/test_ws/src/install/rov_vision/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/rov_vision build --build-base /home/shashwat/test_ws/src/build/rov_vision/build install --record /home/shashwat/test_ws/src/build/rov_vision/install.log --single-version-externally-managed install_data
