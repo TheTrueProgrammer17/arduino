@@ -1,0 +1,53 @@
+#include <Servo.h>
+
+// --- CONFIGURATION ---
+// Ensure these match your physical wiring on the Arduino Uno
+#define PIN_T200_LEFT   9   // Bi-directional (Forward/Reverse)
+#define PIN_T200_RIGHT  10  // Bi-directional (Forward/Reverse)
+#define PIN_BLDC_V1     6   // Single-direction (Up only)
+#define PIN_BLDC_V2     5   // Single-direction (Up only)
+
+Servo motors[4];
+
+void setup() {
+  // 1. Start Serial at high speed to match ROS 2 node
+  Serial.begin(115200);
+
+  // 2. Attach Motors
+  motors[0].attach(PIN_T200_LEFT, 1000, 2000);
+  motors[1].attach(PIN_T200_RIGHT, 1000, 2000);
+  motors[2].attach(PIN_BLDC_V1, 1000, 2000);
+  motors[3].attach(PIN_BLDC_V2, 1000, 2000);
+
+  // 3. ARMING SEQUENCE
+  // T200s need 1500 (Neutral) to arm.
+  // Standard BLDCs need 1000 (Low) to arm.
+  motors[0].writeMicroseconds(1500);
+  motors[1].writeMicroseconds(1500);
+  motors[2].writeMicroseconds(1000);
+  motors[3].writeMicroseconds(1000);
+
+  // Wait 7 seconds to be safe (ESCs play initialization tunes)
+  delay(7000); 
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    // 4. PARSE INCOMING DATA
+    // Format: "1500,1500,1000,1000\n"
+    int p1 = Serial.parseInt(); // T200 Left
+    int p2 = Serial.parseInt(); // T200 Right
+    int p3 = Serial.parseInt(); // BLDC V1
+    int p4 = Serial.parseInt(); // BLDC V2
+
+    // 5. APPLY TO MOTORS
+    // We check for the newline '\n' to ensure we got a full packet
+    if (Serial.read() == '\n') {
+      // Constrain values to prevent damage
+      motors[0].writeMicroseconds(constrain(p1, 1100, 1900));
+      motors[1].writeMicroseconds(constrain(p2, 1100, 1900));
+      motors[2].writeMicroseconds(constrain(p3, 1000, 2000));
+      motors[3].writeMicroseconds(constrain(p4, 1000, 2000));
+    }
+  }
+}
