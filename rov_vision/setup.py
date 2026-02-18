@@ -24,7 +24,7 @@ setup(
     },
     entry_points={
     'console_scripts': [
-        'vision_node = rov_vision.vision_node:main',
+        'gstream_feed = rov_vision.gstream_feed:main',
     ],
 },
 
