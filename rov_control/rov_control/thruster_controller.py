@@ -1,28 +1,24 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
-from std_msgs.msg import Int16MultiArray, Bool
+from std_msgs.msg import Int16MultiArray, Bool, Int32 # Added Int32
 import serial
 
 class ROVThrusterController(Node):
     def __init__(self):
         super().__init__("rov_thruster_controller")
 
-        # --- ARDUINO SERIAL BRIDGE ---
         try:
-            # Change '/dev/ttyACM0' to your actual port (e.g. 'COM3')
             self.arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=0.05)
             self.get_logger().info("Connected to Arduino Uno")
         except Exception as e:
             self.get_logger().error(f"Failed to connect to Arduino: {e}")
             self.arduino = None
 
-        # --- CONFIGURATION ---
         self.PWM_NEUTRAL = 1500
         self.PWM_MIN     = 1100
         self.PWM_MAX     = 1900
         
-        # --- STATE ---
         self.surge = 0.0
         self.yaw = 0.0
         self.heave = 0.0
@@ -30,16 +26,20 @@ class ROVThrusterController(Node):
         self.emergency_stop = False   
         self.depth_lock_active = False
         self.locked_heave_val = 0.0
+        self.arm_angle = 90 # Default start angle for the ring-picking arm
 
-        # --- SUBSCRIBERS ---
+        # Subscribers
         self.cmd_sub = self.create_subscription(Twist, "/rov/cmd_vel", self.cmd_callback, 10)
         self.arm_sub = self.create_subscription(Bool, "/rov/arm_status", self.arm_callback, 10)
         self.lock_sub = self.create_subscription(Bool, "/rov/depth_lock", self.lock_callback, 10)
         self.stop_sub = self.create_subscription(Bool, "/rov/emergency_stop", self.stop_callback, 10)
+        self.arm_angle_sub = self.create_subscription(Int32, "/rov/arm_angle", self.arm_angle_callback, 10) # New Sub
         
         self.pwm_pub = self.create_publisher(Int16MultiArray, "/rov/thruster_pwm", 10)
         self.timer = self.create_timer(0.05, self.update_mixer)
         self.get_logger().info("ROV Controller Active. Waiting for Arm...")
+
+    # ... [Keep cmd_callback, arm_callback, lock_callback, stop_callback exactly as they were] ...
 
     def cmd_callback(self, msg):
         self.surge = msg.linear.x
@@ -67,6 +67,10 @@ class ROVThrusterController(Node):
             self.is_armed = False
             self.depth_lock_active = False
 
+    def arm_angle_callback(self, msg):
+        # Update current angle safely between 0 and 180
+        self.arm_angle = max(0, min(180, msg.data))
+
     def map_pwm(self, val):
         val = max(-1.0, min(1.0, val))
         if val > 0:
@@ -75,21 +79,20 @@ class ROVThrusterController(Node):
             return int(self.PWM_NEUTRAL + (val * (self.PWM_NEUTRAL - self.PWM_MIN)))
 
     def update_mixer(self):
-        # 1. Handle Safety/Disarmed State
         if self.emergency_stop or not self.is_armed:
             stop_pwm = [1500, 1500, 1000, 1000]
-            self.send_to_arduino(stop_pwm)
+            # Send 6 values (Thrusters + Arm Servos)
+            full_payload = stop_pwm + [self.arm_angle, self.arm_angle] 
+            self.send_to_arduino(full_payload)
             self.publish_pwm_msg(stop_pwm)
             return
 
-        # 2. Calculate Control Values
         curr_heave = self.locked_heave_val if self.depth_lock_active else self.heave
         
         h_left  = self.surge + (self.yaw * 0.5)
         h_right = self.surge - (self.yaw * 0.5)
         v_thrust = max(0.0, curr_heave) 
 
-        # 3. Convert to PWM
         final_pwm = [
             self.map_pwm(h_left), 
             self.map_pwm(h_right), 
@@ -97,17 +100,16 @@ class ROVThrusterController(Node):
             int(1000 + v_thrust * 1000)
         ]
         
-        # 4. Send to Arduino & ROS
-        self.send_to_arduino(final_pwm)
+        # Append the arm angles to the payload sent to Arduino
+        full_payload = final_pwm + [self.arm_angle, self.arm_angle]
+        self.send_to_arduino(full_payload)
         self.publish_pwm_msg(final_pwm)
 
-        # 5. LOGGING (This gives you the output you asked for)
-        # Format: SW:Arm/Lock Surge Heave L:PWM R:PWM V1:PWM V2:PWM
         sw_state = "LCK" if self.depth_lock_active else ("ARM" if self.is_armed else "DIS")
-        
+        # Added Arm Angle to the logger output
         self.get_logger().info(
             f"SW:{sw_state} S:{self.surge:.2f} H:{curr_heave:.2f} | "
-            f"L:{final_pwm[0]} R:{final_pwm[1]} V1:{final_pwm[2]} V2:{final_pwm[3]}"
+            f"L:{final_pwm[0]} R:{final_pwm[1]} V1:{final_pwm[2]} V2:{final_pwm[3]} ARM:{self.arm_angle}°"
         )
 
     def send_to_arduino(self, values):

@@ -1,0 +1,37 @@
+--------------------------------------------------------------
+Button,Name,What it does,Visual Indication
+---------------------------------------------------------------
+'A' Button(Cross/Green),ARM / DISARM,Unlocks the Motors. 
+The ROV starts safely disarmed.
+You must press this before sticks will work.,Log: ARMED
+---------------------------------------------------------------
+'B' Button(Circle/Red),EMERGENCY STOP,Kill Switch. 
+Instantly cuts all power (0 PWM).
+Pressing this overrides everything else.,Log: 🚨 EMERGENCY STOP
+----------------------------------------------------------------
+'Y' Button(Triangle/Yellow),DEPTH LOCK,Cruise Control.
+Holds the current vertical thrust.
+Use this to stay underwater without holding the stick.,Log: 🔒
+----------------------------------------------------------------
+L1 Bumper (Left),RAISE ARM,Moves the servo arm UP.
+Gradually raises the arm towards 180 degrees.,Log: ARM: (angle)°
+----------------------------------------------------------------
+R1 Bumper (Right),LOWER ARM,Moves the servo arm DOWN.
+Gradually lowers the arm towards 0 degrees.,Log: ARM: (angle)°
+----------------------------------------------------------------
+
+
+------------------------------
+Stick,Axis,Action,ROV Movement
+------------------------------
+Left Stick,UP,Surge (+),Moves Forward.
+
+Left Stick,DOWN,Stop,Motors stop (cannot reverse).
+
+Left Stick,LEFT,Yaw (+),Turns the nose to the Left.
+
+Left Stick,RIGHT,Yaw (-),Turns the nose to the Right.
+
+Right Stick,DOWN,Heave (-),Dives deeper.
+
+Right Stick,UP,Surface,Stops vertical motors (ROV floats up).
